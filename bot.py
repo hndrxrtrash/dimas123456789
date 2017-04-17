@@ -4,6 +4,7 @@ import pdfkit
 from random import randint
 import os
 import codecs
+import time
 
 bot = telebot.TeleBot('378057239:AAGR5tIXwUuRJVI5iBw-YGcxMRmR-9hBwiY')
 
@@ -77,9 +78,9 @@ def text_handler(message):
             conn.execute(stmt)
         pdfkit.from_string(html, 'pdfs/' + str(message.from_user.id) + '.pdf')
         with codecs.open('pdfs/' + str(message.from_user.id) + '.pdf') as f:
+            bot.send_document(message.from_user.id, f)
             markup = telebot.types.ReplyKeyboardRemove()
             bot.send_message(message.from_user.id, "Your PDF file:", reply_markup=markup)
-            bot.send_document(message.from_user.id, f)
         for filename in os.listdir('images'):
             name = filename.split('_')[0]
             if name == str(message.from_user.id):
