@@ -1,4 +1,4 @@
 sqlalchemy
-telebot
+pyTelegramBotAPI
 pdfkit
 psycopg2
