@@ -105,7 +105,7 @@ def text_handler(message):
 
 while True:
     try:
-        bot.polling(none_stop=True, interval=0)
+        bot.polling(none_stop=True)
     except Exception:
-        pass
+        time.sleep(5)
 
