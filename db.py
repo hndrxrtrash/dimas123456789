@@ -1,4 +1,6 @@
 from sqlalchemy import Table, Column, Integer, String, MetaData, create_engine
+import os
+
 
 db = create_engine(os.environ['DATABASE_URL'])
 metadata = MetaData(db)
