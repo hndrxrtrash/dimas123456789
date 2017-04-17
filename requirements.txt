@@ -1,5 +1,4 @@
 sqlalchemy
 PyTelegramBotAPI==2.2.3
-setuptools==0.7.3
 psycopg2==2.6.2
 pdfkit==0.6.0
