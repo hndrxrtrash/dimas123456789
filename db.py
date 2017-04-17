@@ -1,6 +1,6 @@
 from sqlalchemy import Table, Column, Integer, String, MetaData, create_engine
 
-db = create_engine('postgresql://postgres:homkahomka@localhost:5433/pdfbot')
+db = create_engine(os.environ['DATABASE_URL'])
 metadata = MetaData(db)
 '''
 image_table = Table('images', metadata,
