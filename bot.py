@@ -104,6 +104,8 @@ def text_handler(message):
             message.from_user.id, 'Text has been added.', reply_markup=markup
         )
 
-bot.polling(none_stop=True, interval=0)
-
+try:
+    bot.polling(none_stop=True, interval=0)
+except Exception:
+    pass
 
