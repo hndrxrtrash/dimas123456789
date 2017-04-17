@@ -1,3 +1,4 @@
 sqlalchemy
 telebot
 pdfkit
+psycopg2
