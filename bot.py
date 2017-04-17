@@ -99,7 +99,6 @@ def text_handler(message):
             )
             conn.execute(stmt)
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        markup2 = telebot.types.ReplyKeyboardRemove()
         markup.row('OK')
         bot.send_message(
             message.from_user.id, 'Text has been added.', reply_markup=markup
