@@ -75,7 +75,6 @@ def text_handler(message):
                 text_table.c.user == message.from_user.id
             ).values(text='<!doctype html> <head> <style> body { font-size: 20pt; } </style> <meta charset="utf-8"> </head> <body>')
             conn.execute(stmt)
-        print(html)
         pdfkit.from_string(html, 'pdfs/' + str(message.from_user.id) + '.pdf')
         with codecs.open('pdfs/' + str(message.from_user.id) + '.pdf') as f:
             markup = telebot.types.ReplyKeyboardRemove()
@@ -104,8 +103,9 @@ def text_handler(message):
             message.from_user.id, 'Text has been added.', reply_markup=markup
         )
 
-try:
-    bot.polling(none_stop=True, interval=0)
-except Exception:
-    pass
+while True:
+    try:
+        bot.polling(none_stop=True, interval=0)
+    except Exception:
+        pass
 
