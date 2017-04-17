@@ -5,7 +5,7 @@ from random import randint
 import os
 import codecs
 
-bot = telebot.TeleBot('YOUR TOKEN HERE')
+bot = telebot.TeleBot('378057239:AAGR5tIXwUuRJVI5iBw-YGcxMRmR-9hBwiY')
 
 
 @bot.message_handler(commands=['start'])
